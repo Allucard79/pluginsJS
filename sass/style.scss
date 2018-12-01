@@ -1,0 +1,46 @@
+* { 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: sans-serif; 
+    color: #dcdde1;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel-cell {
+    width: 100%; /* full width */
+    height: 50%; /* height of carousel */
+    min-height: 250px;
+    margin-right: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0;
+    background: #333;
+}
+
+.button {
+    font-size: 22px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
