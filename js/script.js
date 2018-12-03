@@ -1,3 +1,15 @@
+var templateSlide = document.getElementById('template-slide').innerHTML;
+
+Mustache.parse(templateSlide);
+
+var listSlide = '';
+
+for(var i = 0; i < slideData.length; i++){
+    console.log(slideData);
+    listSlide += Mustache.render(templateSlide, slideData[i]);
+}
+results.insertAdjacentHTML('afterbegin', listSlide);
+
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity(elem, {
     wrapAround: true,
@@ -26,3 +38,4 @@ buttonGroup.addEventListener('click', function (event) {
     var index = buttons.indexOf(event.target);
     flkty.select(index);
 });
+

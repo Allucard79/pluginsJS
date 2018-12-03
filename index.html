@@ -9,45 +9,84 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/vendor/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/vendor/flickity.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/sass/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.0/mustache.min.js"></script>
 </head>
 
 <body>
 
-    <div class="main-carousel">
-        <div class="carousel-cell" id="carousel-cell1" style="background-image: url(images/sokoliki.jpg)">
-            <div class="container">
-                <h1>sokoliki</h1>
-            </div>
+<div class="main-carousel" id="results">
+    <script class="carousel-cell" id="template-slide" type="x-tmpl-mustache" >
+        <div class="container" style="background-image: url({{image}})">
+            <h1>{{title}}</h1>
+            <p>{{{description}}}</p>
         </div>
-        <div class="carousel-cell" id="carousel-cell2" style="background-image: url(images/jura.jpg)">
-            <div class="container">
-                <h1>jura</h1>
-            </div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell3" style="background-image: url(images/frankenjura.jpg)">
-            <div class="container">
-                <h1>frankenjura</h1>
-            </div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell4" style="background-image: url(images/arco.jpg)">
-            <div class="container">
-                <h1>arco</h1>
-            </div>
-        </div>
-        <div class="carousel-cell" id="carousel-cell5" style="background-image: url(images/adlitz.jpg)">
-            <div class="container">
-                <h1>adlitzgraben</h1>
-            </div>
+    </script>   
+<!--<div class="carousel-cell" style="background-image: url(images/sokoliki.jpg)">
+        <div class="container">
+            <h1>sokoliki</h1>
         </div>
     </div>
+    <div class="carousel-cell"  style="background-image: url(images/jura.jpg)">
+        <div class="container">
+            <h1>jura</h1>
+        </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url(images/frankenjura.jpg)">
+        <div class="container">
+            <h1>frankenjura</h1>
+        </div>
+        </div>
+    <div class="carousel-cell" style="background-image: url(images/arco.jpg)">
+        <div class="container">
+            <h1>arco</h1>
+        </div>
+    </div>
+    <div class="carousel-cell" style="background-image: url(images/adlitz.jpg)">
+        <div class="container">
+            <h1>adlitzgraben</h1>
+        </div>
+    </div>
+</div>-->
+</div>
     <div class="button-group">
         <button class="button">RESET</button>
     </div>
     <div class="progress-bar"></div>
-    <script src="/vendor/flickity.pkgd.min.js"></script>
+    
+<script>
+
+var slideData = [
+        {
+            image: "images/sokoliki.jpg",
+            title: 'sokoliki', 
+            description: '<p>Jest to niezwykle malowniczy rejon, położony w otoczeniu niewysokich, ale za to niezwykle widokowych i urokliwych wzgórz Rudaw Janowickich.</p>'
+        },
+        {
+            image: "images/jura.jpg",
+            title: 'jura', 
+            description: '<p>Jest to przepiękna kraina o urozmaiconym krajobrazie z charaterystycznymi białymi ostańcami. Rozciąga się w Polsce południowej, od Częstochowy i Mstowa na północy, przez Ogrodzieniec po Kraków.</p>'
+        },
+        {
+            image: "images/frankenjura.jpg",
+            title: 'Norymberga', 
+            description: '<p>Położona nad rzeką Pegnitz, gospodarcza i kulturalna stolica Frankonii, drugie co do wielkości miasto w Bawarii.</p>'
+        },
+        {
+            image: "images/arco.jpg",
+            title: 'arco', 
+            description: '<p>Niewielka, położona u podnóża gór miejscowość chętnie odwiedzana przez narciarzy, miłośników górskich wędrówek oraz.... sportów wodnych. Zalewie 5 kilometrów od Arco znajduje się największe włoskie jezioro – Garda.</p>'
+        },
+        {
+            image: "images/adlitz.jpg",
+            title: 'adlitzgraben', 
+            description: '<p>Malownicza dolina w rejonie przełęczy Semmering (Austria), ok. 80 km na pd-zach od Wiednia.</p>'
+        }
+];
+</script>
+
+    <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
-    <script src="vendor/mustache.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

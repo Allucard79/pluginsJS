@@ -11,24 +11,32 @@ body {
     width: 1200px;
     margin: 0 auto;
     text-align: center;
-}
-
-.carousel-cell {
-    width: 100%; /* full width */
-    height: 50%; /* height of carousel */
-    min-height: 250px;
-    margin-right: 10px;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 50%; /* height of carousel */
+    min-height: 250px;
+    width: 100%; /* full width */
+    margin-right: 10px;
 }
+
+
 
 h1 {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 48px;
     text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
     text-shadow: 2px 2px 4px #000000;
 }
 
