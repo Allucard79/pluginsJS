@@ -26,16 +26,9 @@ flkty.on('scroll', function (progress) {
     progressBar.style.width = progress * 100 + '%';
 });
 
-var buttonGroup = document.querySelector('.button-group');
-var buttons = buttonGroup.querySelectorAll('.button');
-buttons = fizzyUIUtils.makeArray(buttons);
+var button = document.querySelector('.button');
 
-buttonGroup.addEventListener('click', function (event) {
-
-    if (!matchesSelector(event.target, '.button')) {
-        return;
-    }
-    var index = buttons.indexOf(event.target);
-    flkty.select(index);
+button.addEventListener('click', function () {
+    flkty.select(0);
 });
 
