@@ -4,7 +4,7 @@ Mustache.parse(templateSlide);
 
 var listSlide = '';
 
-for(var i = 0; i < slideData.length; i++){
+for (var i = 0; i < slideData.length; i++) {
     console.log(slideData);
     listSlide += Mustache.render(templateSlide, slideData[i]);
 }
@@ -32,3 +32,30 @@ button.addEventListener('click', function () {
     flkty.select(0);
 });
 
+window.initMap = function () {
+    var locations = [
+        ['sokoliki', 50.8697854, 15.8698772],
+        ['jura', 50.7495748, 19.2686115],
+        ['frankenjura', 49.453872, 11.077298],
+        ['arco', 45.9180319, 10.8860765],
+        ['adlitzgraben', 47.6507972, 15.8154282]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 7,
+        center: {
+            lat: 50.8697854,
+            lng: 15.8698772
+        }
+    });
+
+    var marker;
+
+    for (var i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
+    }
+
+};

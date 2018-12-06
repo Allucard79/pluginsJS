@@ -48,43 +48,68 @@
     </div>
 </div>-->
     
-        <button class="button">RESET</button>
+    <button class="button">RESET</button>
     <div class="progress-bar"></div>
+
+    <div id="map-wrapper" class="maps">
+        <div id="map"></div>
+    </div>
     
 <script>
-
 var slideData = [
         {
             image: "images/sokoliki.jpg",
             title: 'sokoliki', 
-            description: '<p>Jest to niezwykle malowniczy rejon, położony w otoczeniu niewysokich, ale za to niezwykle widokowych i urokliwych wzgórz Rudaw Janowickich.</p>'
+            description: '<p>Jest to niezwykle malowniczy rejon, położony w otoczeniu niewysokich, ale za to niezwykle widokowych i urokliwych wzgórz Rudaw Janowickich.</p>',
+            coords: {
+                    lat: 50.8697854, 
+                    lng: 15.8698772
+                    }
         },
         {
             image: "images/jura.jpg",
             title: 'jura', 
-            description: '<p>Jest to przepiękna kraina o urozmaiconym krajobrazie z charaterystycznymi białymi ostańcami. Rozciąga się w Polsce południowej, od Częstochowy i Mstowa na północy, przez Ogrodzieniec po Kraków.</p>'
+            description: '<p>Jest to przepiękna kraina o urozmaiconym krajobrazie z charaterystycznymi białymi ostańcami. Rozciąga się w Polsce południowej, od Częstochowy i Mstowa na północy, przez Ogrodzieniec po Kraków.</p>',
+            coords: {
+                    lat: 50.7495748, 
+                    lng: 19.2686115
+                    }
         },
         {
             image: "images/frankenjura.jpg",
             title: 'Norymberga', 
-            description: '<p>Położona nad rzeką Pegnitz, gospodarcza i kulturalna stolica Frankonii, drugie co do wielkości miasto w Bawarii.</p>'
+            description: '<p>Położona nad rzeką Pegnitz, gospodarcza i kulturalna stolica Frankonii, drugie co do wielkości miasto w Bawarii.</p>',
+            coords: {
+                    lat: 49.453872, 
+                    lng: 11.077298
+                    }
         },
         {
             image: "images/arco.jpg",
             title: 'arco', 
-            description: '<p>Niewielka, położona u podnóża gór miejscowość chętnie odwiedzana przez narciarzy, miłośników górskich wędrówek oraz.... sportów wodnych. Zalewie 5 kilometrów od Arco znajduje się największe włoskie jezioro – Garda.</p>'
+            description: '<p>Niewielka, położona u podnóża gór miejscowość chętnie odwiedzana przez narciarzy, miłośników górskich wędrówek oraz.... sportów wodnych. Zalewie 5 kilometrów od Arco znajduje się największe włoskie jezioro – Garda.</p>',
+            coords: {
+                    lat: 45.9180319, 
+                    lng: 10.8860765
+                    }
         },
         {
             image: "images/adlitz.jpg",
             title: 'adlitzgraben', 
-            description: '<p>Malownicza dolina w rejonie przełęczy Semmering (Austria), ok. 80 km na pd-zach od Wiednia.</p>'
+            description: '<p>Malownicza dolina w rejonie przełęczy Semmering (Austria), ok. 80 km na pd-zach od Wiednia.</p>',
+            coords: {
+                    lat: 47.6507972, 
+                    lng: 15.8154282
+                    }
         }
 ];
+
 </script>
 
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="vendor/hash.js"></script>
     <script src="js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiJs6znBYlZ0QsgQYTX0CGRiff2c500g&callback=initMap"></script>
 </body>
 
 </html>
