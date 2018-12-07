@@ -31,31 +31,35 @@ var button = document.querySelector('.button');
 button.addEventListener('click', function () {
     flkty.select(0);
 });
+var locations = slideData.map(function(a) {return a.coords;});
 
-window.initMap = function () {
-    var locations = [
-        ['sokoliki', 50.8697854, 15.8698772],
-        ['jura', 50.7495748, 19.2686115],
-        ['frankenjura', 49.453872, 11.077298],
-        ['arco', 45.9180319, 10.8860765],
-        ['adlitzgraben', 47.6507972, 15.8154282]
-    ];
+var markers = [];
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
+var map;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
         center: {
             lat: 50.8697854,
             lng: 15.8698772
         }
     });
+}
 
-    var marker;
-
+function drop() {
     for (var i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
-        });
+        addMarkerWithTimeout(locations[i], i * 200);
     }
+}
 
-};
+function addMarkerWithTimeout(position, timeout) {
+    window.setTimeout(function () {
+        markers.push(new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP
+        }));
+    }, timeout);
+}
+drop();
