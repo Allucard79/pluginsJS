@@ -5,7 +5,6 @@ Mustache.parse(templateSlide);
 var listSlide = '';
 
 for (var i = 0; i < slideData.length; i++) {
-    console.log(slideData);
     listSlide += Mustache.render(templateSlide, slideData[i]);
 }
 results.insertAdjacentHTML('afterbegin', listSlide);
@@ -33,8 +32,6 @@ button.addEventListener('click', function () {
 });
 var locations = slideData.map(function(a) {return a.coords;});
 
-var markers = [];
-
 var map;
 
 function initMap() {
@@ -45,21 +42,23 @@ function initMap() {
             lng: 15.8698772
         }
     });
-}
+    
+    var marker, i;
 
-function drop() {
-    for (var i = 0; i < locations.length; i++) {
-        addMarkerWithTimeout(locations[i], i * 200);
-    }
-}
-
-function addMarkerWithTimeout(position, timeout) {
-    window.setTimeout(function () {
-        markers.push(new google.maps.Marker({
-            position: position,
+	for (i = 0; i < locations.length; i++) {
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i]),
             map: map,
             animation: google.maps.Animation.DROP
-        }));
-    }, timeout);
+		});
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+			return function () {
+				flkty.select(i);
+			}
+		})(marker, i));
+    }
+    flkty.on( 'change', function( index ) {
+        map.panTo(locations[index]);
+        map.setZoom(7);
+    });
 }
-drop();
