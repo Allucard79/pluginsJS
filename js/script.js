@@ -5,7 +5,6 @@ Mustache.parse(templateSlide);
 var listSlide = '';
 
 for (var i = 0; i < slideData.length; i++) {
-    console.log(slideData);
     listSlide += Mustache.render(templateSlide, slideData[i]);
 }
 results.insertAdjacentHTML('afterbegin', listSlide);
@@ -31,6 +30,8 @@ var button = document.querySelector('.button');
 button.addEventListener('click', function () {
     flkty.select(0);
 });
+
+
 var locations = slideData.map(function(a) {return a.coords;});
 
 var markers = [];
